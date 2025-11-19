@@ -1,6 +1,6 @@
 import got from 'got';
 
-const dataURL = "https://dev-cs5513-fall2025-ashsouza.pantheonsite.io/wp-json/twentytwentyone-child/v1/latest-posts/1";
+const dataURL = "https://dev-cs5513-fall2025-ashsouza.pantheonsite.io/wp-json/twentytwentyone-child/v1/special";
 
 export async function getSortedPostsData() {
     // Get file path of posts
@@ -108,6 +108,7 @@ export async function getPostData(id) {
             "date": '',
             "contentHtml": 'Not found',
             "category": 'Not found',
+            "username": 'Not found',
         }
     } else {
         return objectReturned[0];
@@ -117,6 +118,7 @@ export async function getPostData(id) {
             date: '',
             contentHtml: 'Not found',
             category: 'Not found',
+            username: 'Not found',
         };
     }
 
@@ -128,5 +130,6 @@ export async function getPostData(id) {
         date: post.post_date ?? post.date ?? '',
         contentHtml: post.post_content ?? post.contentHtml ?? '',
         category: post.post_category ?? post.category ?? '',
+        username: post.user_login ?? '',
     };
 }
