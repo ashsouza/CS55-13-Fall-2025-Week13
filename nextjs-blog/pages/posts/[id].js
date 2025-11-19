@@ -51,7 +51,7 @@ export default function Post({ postData }) {
                       />
         <div className={utilStyles.lightText}>
           <Date dateString={postData.date} />
-          <h1 {postData.username} />
+          <h1>{postData.username}</h1>
         </div>
         <div className={utilStyles.headingMd} dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
