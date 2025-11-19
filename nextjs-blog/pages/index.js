@@ -1,7 +1,5 @@
 import Link from 'next/link';
 import Date from '../components/date';
-
-//comment
 // Import the Head component from Next.js to manage HTML document head.
 import Head from 'next/head'; 
 // Import the custom Layout component and a constant `siteTitle` for page structure and metadata.
@@ -14,7 +12,7 @@ import { getSortedPostsData } from '../lib/posts-json';
 import Image from 'next/image'
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+  const allPostsData =  await getSortedPostsData();
   return {
     props: {
       allPostsData,
